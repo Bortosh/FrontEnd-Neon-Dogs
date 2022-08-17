@@ -14,7 +14,7 @@ export const DELETE_DOG = 'DELETE_DOG'
 
 export function getDogs() {
     return async function(dispatch) {
-        const json = await axios ('http://localhost:3001/dogs')
+        const json = await axios ('https://mysterious-mesa-86352.herokuapp.com/dogs')
         const data = json.data
         return dispatch({
             type: GET_DOGS,
@@ -25,7 +25,7 @@ export function getDogs() {
 
 export function getTemper() {
     return async function(dispatch) {
-        const json = await axios ('http://localhost:3001/temperaments')
+        const json = await axios ('https://mysterious-mesa-86352.herokuapp.com/temperaments')
         return dispatch({
             type: GET_TEMPER,
             payload: json.data
@@ -44,7 +44,7 @@ export function paginacion(payload) {
 
 export function getOneDog(id) {
     return async function(dispatch) {
-        const json = await axios (`http://localhost:3001/dogs/${id}`)
+        const json = await axios (`https://mysterious-mesa-86352.herokuapp.com/dogs/${id}`)
         const data = await json.data
         return dispatch({
             type: ONE_DOG,
@@ -56,7 +56,7 @@ export function getOneDog(id) {
 export function searchByName(name) {
     return async (dispatch) => {
         try {
-            const res = await axios('http://localhost:3001/dogs?name='+name)
+            const res = await axios('https://mysterious-mesa-86352.herokuapp.com/dogs?name='+name)
             const data = await res.data
                 return dispatch({
                     type: SEARCH_BY_NAME,
@@ -77,7 +77,7 @@ export function filterTemper(payload) {
 
 export function postDogs(payload) {
     return async function() {
-        const create = await axios.post('http://localhost:3001/dogs',payload);
+        const create = await axios.post('https://mysterious-mesa-86352.herokuapp.com/dogs',payload);
         return create
     }
 }
@@ -111,7 +111,7 @@ export function filterExistingDog(payload) {
 
 export function deleteDog(payload) {
     return async (dispatch) => {
-        const data = await axios.delete('http://localhost:3001/dogs/'+ payload);
+        const data = await axios.delete('https://mysterious-mesa-86352.herokuapp.com/dogs/'+ payload);
         console.log("🚀 ~ file: index.js ~ line 118 ~ return ~ data", data)
         return dispatch ({
             type: DELETE_DOG
@@ -212,7 +212,7 @@ export function deleteDog(payload) {
 
         // export function getOneDog(id) {
         //     return async function(dispatch) {
-        //         const json = axios (`http://localhost:3001/dogs/` + id)
+        //         const json = axios (`https://mysterious-mesa-86352.herokuapp.com/dogs/` + id)
         //         return dispatch({
         //             type: ONE_DOG,
         //             payload: json.data
