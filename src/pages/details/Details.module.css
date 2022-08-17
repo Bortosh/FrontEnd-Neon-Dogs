@@ -1,0 +1,239 @@
+.detalle
+{   
+    display: flex;
+    justify-content: center;
+    color: #d400d4;
+    text-transform: uppercase;
+}
+
+.prop
+{
+    color: #d400d4;
+}
+
+.span
+{
+    color: #00ccff;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 650px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 240%;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animate 4s linear infinite;
+    bottom: -150px;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    background: #162052;
+    inset: 2px;
+}
+
+@keyframes animate 
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.box .image {
+    position: relative; 
+    z-index: 10;
+    border-radius: 15px;
+}
+
+
+/* CSS para DELETE BUTTON */
+
+.divDelete
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn
+{
+    position: relative;
+    width: 160px;
+    height: 60px;
+    background: #162052;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+    border: none;
+}
+
+.btn:hover
+{
+    cursor: pointer;
+}
+
+.btn .span6
+{
+    position: absolute;
+    left: 30px;
+    top: 22px;
+    width: 18px;
+    height: 20px;
+    display: inline-block;
+    background: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: 0.5s;
+}
+
+.btn:hover .span6 
+{
+    transform: scale(2.4) rotate(60deg) translateY(10px);
+    cursor: pointer;
+}
+
+.btn .span6::before
+{
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    box-shadow: 12px -2px 0 #162052,
+    12px -3px 0 #162052,
+    15px -1px 0 #162052,
+    6px -2px 0 #fff;
+    transition: 0.5s;
+}
+
+.btn:hover .span6::before
+{
+    transform: rotate(-90deg) translateX(50%) translateY(-10px);
+}
+
+.btn .text 
+{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: #fff;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.text:hover
+{
+    cursor: pointer;
+}
+
+.btn:hover .text
+{
+    transform: translateX(-80px) translateY(-5px) scale(0);
+}
+
+
+.loader {
+color: #1ac0ea;
+font-size: 90px;
+text-indent: -9999em;
+overflow: hidden;
+width: 1em;
+height: 1em;
+border-radius: 50%;
+margin: 72px auto;
+position: relative;
+-webkit-transform: translateZ(0);
+-ms-transform: translateZ(0);
+transform: translateZ(0);
+-webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+5%,
+95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+10%,
+59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+}
+20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+}
+38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+}
+100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+}
+@keyframes load6 {
+0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+5%,
+95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+10%,
+59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+}
+20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+}
+38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+}
+100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+}
+}
+@-webkit-keyframes round {
+0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
+@keyframes round {
+0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
